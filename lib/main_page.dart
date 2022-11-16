@@ -14,6 +14,8 @@ class _MainPageState extends State<MainPage> {
 
   late double bmi = calculateBMI(height: height, weight: weight);
 
+  String gender = '';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,32 +27,62 @@ class _MainPageState extends State<MainPage> {
             children: [
               Row(
                 children: [
-                  Container(
-                    color: Colors.blue.withAlpha(50),
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      children: const [
-                        Icon(
-                          Icons.male,
-                          size: 100,
-                          color: Color(0xFF59C1BD),
-                        ),
-                        Text("Male"),
-                      ],
+                  GestureDetector(
+                    onTap: () {
+                      print("Male");
+                      setState(() {
+                        gender = 'M';
+                      });
+                    },
+                    child: Container(
+                      height: 150,
+                      width: 150,
+                      decoration: BoxDecoration(
+                        color: gender == 'M'
+                            ? Colors.blue.withAlpha(120)
+                            : Colors.blue.withAlpha(20),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        children: const [
+                          Icon(
+                            Icons.male,
+                            size: 100,
+                            color: Color(0xFF59C1BD),
+                          ),
+                          Text("Male"),
+                        ],
+                      ),
                     ),
                   ),
                   const Spacer(),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      children: const [
-                        Icon(
-                          Icons.female,
-                          size: 100,
-                          color: Color(0xFFF7A4A4),
-                        ),
-                        Text("Female"),
-                      ],
+                  GestureDetector(
+                    onTap: () {
+                      print("Female");
+                      setState(() {
+                        gender = 'F';
+                      });
+                    },
+                    child: Container(
+                      height: 150,
+                      width: 150,
+                      decoration: BoxDecoration(
+                          color: gender == 'F'
+                              ? Colors.pink.withAlpha(120)
+                              : Colors.pink.withAlpha(20),
+                          borderRadius: BorderRadius.circular(15)),
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        children: const [
+                          Icon(
+                            Icons.female,
+                            size: 100,
+                            color: Color(0xFFF7A4A4),
+                          ),
+                          Text("Female"),
+                        ],
+                      ),
                     ),
                   ),
                 ],
