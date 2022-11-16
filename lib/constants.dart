@@ -7,3 +7,13 @@ const kInputLabelColor = TextStyle(
   fontSize: 50,
   fontWeight: FontWeight.bold,
 );
+const kResultText = TextStyle(
+  color: kTextColor,
+  fontSize: 30,
+  fontWeight: FontWeight.w600,
+);
+const kFooterText = TextStyle(
+  color: kTextColor,
+  fontSize: 14,
+  fontWeight: FontWeight.w400,
+);

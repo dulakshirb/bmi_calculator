@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:bmi_calculator/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -30,7 +32,6 @@ class _MainPageState extends State<MainPage> {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      print("Male");
                       setState(() {
                         gender = 'M';
                       });
@@ -60,7 +61,6 @@ class _MainPageState extends State<MainPage> {
                   const Spacer(),
                   GestureDetector(
                     onTap: () {
-                      print("Female");
                       setState(() {
                         gender = 'F';
                       });
@@ -191,7 +191,24 @@ class _MainPageState extends State<MainPage> {
                     style: kInputLabelColor.copyWith(
                         color: kOutputTextColor, fontSize: 70),
                   ),
-                  Text(getResult(bmi))
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 15),
+                    child: Text(
+                      getResult(bmi),
+                      style: kResultText,
+                    ),
+                  )
+                ],
+              ),
+              const SizedBox(
+                height: 70,
+              ),
+              Column(
+                children: const [
+                  Text(
+                    "Developed by DulakshiRB",
+                    style: kFooterText,
+                  ),
                 ],
               ),
             ],
