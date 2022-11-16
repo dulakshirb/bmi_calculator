@@ -24,6 +24,7 @@ class _MainPageState extends State<MainPage> {
           color: const Color(0xFFCFF5E7),
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 25),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Row(
                 children: [
@@ -40,7 +41,7 @@ class _MainPageState extends State<MainPage> {
                       decoration: BoxDecoration(
                         color: gender == 'M'
                             ? Colors.blue.withAlpha(120)
-                            : Colors.blue.withAlpha(20),
+                            : Colors.blue.withAlpha(10),
                         borderRadius: BorderRadius.circular(15),
                       ),
                       padding: const EdgeInsets.all(8.0),
@@ -70,7 +71,7 @@ class _MainPageState extends State<MainPage> {
                       decoration: BoxDecoration(
                           color: gender == 'F'
                               ? Colors.pink.withAlpha(120)
-                              : Colors.pink.withAlpha(20),
+                              : Colors.pink.withAlpha(10),
                           borderRadius: BorderRadius.circular(15)),
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
